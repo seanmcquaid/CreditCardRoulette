@@ -13,7 +13,7 @@ const rootReducer = (state = initialState, action) => {
         case "ADD_PLAYER":
             return {
                 ...state,
-                playerNames : [...state.playerNames, action.payload]
+                playerNames : [...state.playerNames, action.payload.playerName]
             };
         case "REMOVE_PLAYER":
             return {
