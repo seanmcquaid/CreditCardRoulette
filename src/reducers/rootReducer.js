@@ -15,11 +15,17 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 playerNames : [...state.playerNames, action.payload.playerName]
             };
-        case "REMOVE_PLAYER":
+        case "DELETE_PLAYER":
+            console.log(action.payload)
             return {
                 ...state,
                 playerNames : state.playerNames.filter(playerName => playerName !== action.payload.playerName)
             };
+        case "GET_PLAYERS":
+            return {
+                ...state,
+                playerNames : state.playerNames,
+            }
         default :
             return state;
     }

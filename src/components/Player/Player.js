@@ -2,11 +2,14 @@ import React from "react";
 import { View, Text, Button } from "react-native";
 import PropTypes from "prop-types";
 
-const Player = ({playerName, removePlayer, key}) => {
-    
+const Player = ({playerName, removePlayer}) => {
     return (
-    <Text key={key}>Player Here</Text>
-)};
+        <View>
+            <Text>{playerName}</Text>
+            <Button title="Delete" onPress={playerName => removePlayer(playerName)}/>
+        </View>
+        )
+};
 
 Player.propTypes = {
     playerName : PropTypes.string.isRequired,

@@ -12,10 +12,10 @@ export const addPlayer = playerName => ({
     }
 });
 
-export const deletePlayer = playerName => ({
+export const deletePlayer = selectedPlayerName => ({
     type : "DELETE_PLAYER",
     payload : {
-        playerName
+        selectedPlayerName
     }
 });
 

@@ -8,32 +8,27 @@ import styled from "styled-components/native";
 const PlayersList = ({navigation}) => {
     const [state, dispatch] = useContext(GlobalContext);
     const [playerName, setPlayerName] = useState("");
-
-    
+    let {playerNames, splitBillAmount} = state;
 
     const addPlayerToList = async event => {
-        event.preventDefault();
         await dispatch(addPlayer(playerName));
         setPlayerName("");
     };
 
-    const removePlayerFromList = async event => {
-        await dispatch(deletePlayer(playerName));
-        setPlayerName("");
+    const removePlayerFromList = async selectedPlayerName => {
+        console.log(selectedPlayerName)
+        // await dispatch(deletePlayer(selectedPlayerName));
     };
 
     return (
         <PlayersListScreenContainer>
             <Text>Players List</Text>
-            <Text>If you were to split the bill, it would be {state.splitBillAmount} per person</Text>
+            <Text>If you were to split the bill, it would be {splitBillAmount} per person</Text>
             <Text>But why would you do that when you could make one sap pay for it all!?</Text>
             <FlatList
-                data={state.playerNames}
-                renderItem={(item) => { 
-                    console.log(item.item);
-                    return <Player playerName={item.item} removePlayer={removePlayerFromList} key={item.index}/>
-                }
-            }
+                data={playerNames}
+                renderItem={({item, index}) => <Player playerName={item} removePlayer={removePlayerFromList} key={index}/>}
+                keyExtractor={(item, index) => index.toString()}
             />
             <TextInput
                 placeholder="Enter Player Here" 
