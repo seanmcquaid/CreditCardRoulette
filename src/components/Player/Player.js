@@ -1,13 +1,13 @@
 import React from "react";
 import { View, Text, Button } from "react-native";
 import PropTypes from "prop-types";
+import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 
 const Player = ({playerName, removePlayer}) => {
     return (
-        <View>
+        <TouchableWithoutFeedback onPress={() => removePlayer(playerName)}>
             <Text>{playerName}</Text>
-            <Button title="Delete" onPress={playerName => removePlayer(playerName)}/>
-        </View>
+        </TouchableWithoutFeedback>
         )
 };
 

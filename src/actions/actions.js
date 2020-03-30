@@ -18,7 +18,3 @@ export const deletePlayer = selectedPlayerName => ({
         selectedPlayerName
     }
 });
-
-export const getPlayers = () => ({
-    type : "GET_PLAYERS",
-})

@@ -8,16 +8,16 @@ import styled from "styled-components/native";
 const PlayersList = ({navigation}) => {
     const [state, dispatch] = useContext(GlobalContext);
     const [playerName, setPlayerName] = useState("");
-    let {playerNames, splitBillAmount} = state;
+    const {playerNames, checkAmount} = state;
+    const splitBillAmount = checkAmount / (playerNames.length === 0 ? 1 : playerNames.length);
 
-    const addPlayerToList = async event => {
+    const addPlayerToList = async () => {
         await dispatch(addPlayer(playerName));
         setPlayerName("");
     };
 
     const removePlayerFromList = async selectedPlayerName => {
-        console.log(selectedPlayerName)
-        // await dispatch(deletePlayer(selectedPlayerName));
+        await dispatch(deletePlayer(selectedPlayerName));
     };
 
     return (
@@ -27,7 +27,12 @@ const PlayersList = ({navigation}) => {
             <Text>But why would you do that when you could make one sap pay for it all!?</Text>
             <FlatList
                 data={playerNames}
-                renderItem={({item, index}) => <Player playerName={item} removePlayer={removePlayerFromList} key={index}/>}
+                renderItem={({item, index}) => (
+                    <Player 
+                        playerName={item} 
+                        removePlayer={removePlayerFromList} 
+                    />
+                )}
                 keyExtractor={(item, index) => index.toString()}
             />
             <TextInput
