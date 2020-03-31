@@ -1,10 +1,11 @@
 import React from "react";
 import {View, Text, Button} from "react-native";
 import styled from "styled-components/native";
+import HeaderText from "../../components/HeaderText/HeaderText";
 
 const Home = ({navigation}) => (
     <HomeScreenContainer>
-        <Text>Credit Card Roulette</Text>
+        <HeaderText>Credit Card Roulette</HeaderText>
         <Button title="Play" onPress={() => navigation.push("Enter Check")}/>
     </HomeScreenContainer>
 );
