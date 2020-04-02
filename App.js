@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {AppLoading} from "expo";
+import {ActivityIndicator} from "react-native";
 import AppNavigator from "./src/navigation/AppNavigator";
 import {GlobalContextProvider} from "./src/store/store";
 import * as Font from "expo-font";
@@ -11,25 +11,22 @@ const App = () => {
     useEffect(() => {
         const getFonts = async () => {
             await Font.loadAsync({
-                "FiraSans" : require("./assets/FiraSans-Black.ttf"),
-                "MerriweatherBold" : require("./assets/Merriweather-Bold.ttf"),
-                "MerriweatherRegular" : require("./assets/Merriweather-Regular.ttf")
+                "Fira-Sans" : require("./assets/FiraSans-Black.ttf"),
+                "Merriweather-Bold" : require("./assets/Merriweather-Bold.ttf"),
+                "Merriweather-Regular" : require("./assets/Merriweather-Regular.ttf")
             });
             setIsFontLoaded(true);
         };
         if(!isFontLoaded){
-            console.log("loading fonts");
             getFonts();
         }
     }, [])
     
     if(!isFontLoaded){
-        console.log("fonts loading")
         return(
-            <AppLoading/>
+            <ActivityIndicator/>
         );
     }else {
-        console.log("fonts loaded")
         return (
             <GlobalContextProvider>
                 <AppNavigator/>

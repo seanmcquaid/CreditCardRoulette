@@ -1,8 +1,11 @@
 import React, {useState, useContext} from "react";
 import {GlobalContext} from "../../store/store";
-import {View, Text, Button, TextInput} from "react-native";
+import {View} from "react-native";
 import {setCheckAmount} from "../../actions/actions";
 import styled from "styled-components/native";
+import HeaderText from "../../components/HeaderText/HeaderText";
+import Button from "../../components/Button/Button";
+import TextInput from "../../components/TextInput/TextInput";
 
 const EnterCheck = ({navigation}) => {
     const [state, dispatch] = useContext(GlobalContext);
@@ -15,7 +18,7 @@ const EnterCheck = ({navigation}) => {
 
     return (
         <EnterCheckScreenContainer>
-            <Text>Enter Check</Text>
+            <HeaderText>Enter Check</HeaderText>
             <TextInput 
                 placeholder="Enter Amount Here" 
                 value={inputText} 
