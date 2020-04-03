@@ -13,7 +13,7 @@ const EnterCheck = ({navigation}) => {
     
     const handlePlayButtonTap = async () => {
         await dispatch(setCheckAmount(inputText));
-        await navigation.push("Players List");
+        await navigation.navigate("Players List");
     };
 
     return (

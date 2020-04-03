@@ -1,15 +1,21 @@
 import React from "react";
-import { View, Text, Button } from "react-native";
+import { Text, TouchableWithoutFeedback } from "react-native";
 import PropTypes from "prop-types";
-import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import styled from "styled-components/native";
 
 const Player = ({playerName, removePlayer}) => {
     return (
         <TouchableWithoutFeedback onPress={() => removePlayer(playerName)}>
-            <Text>{playerName}</Text>
+            <PlayerName>{playerName}</PlayerName>
         </TouchableWithoutFeedback>
         )
 };
+
+const PlayerName = styled(Text)`
+    font-family : Merriweather-Bold;
+    font-size : 20px;
+    margin : 6px;
+`;
 
 Player.propTypes = {
     playerName : PropTypes.string.isRequired,

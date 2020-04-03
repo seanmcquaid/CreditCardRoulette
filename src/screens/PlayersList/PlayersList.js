@@ -1,8 +1,12 @@
 import React, { useContext, useState } from "react";
 import {GlobalContext} from "../../store/store";
-import {View, Text, Button, FlatList, TextInput} from "react-native";
+import {View, FlatList} from "react-native";
 import {addPlayer, deletePlayer} from "../../actions/actions";
 import Player from "../../components/Player/Player";
+import HeaderText from "../../components/HeaderText/HeaderText";
+import TextInput from "../../components/TextInput/TextInput";
+import Button from "../../components/Button/Button";
+import ParagraphText from "../../components/ParagraphText/ParagraphText";
 import styled from "styled-components/native";
 
 const PlayersList = ({navigation}) => {
@@ -20,11 +24,15 @@ const PlayersList = ({navigation}) => {
         await dispatch(deletePlayer(selectedPlayerName));
     };
 
+    const handlePlayButtonClick = async () => {
+        await navigation.navigate("Roulette Page");
+    };
+
     return (
         <PlayersListScreenContainer>
-            <Text>Players List</Text>
-            <Text>If you were to split the bill, it would be {splitBillAmount} per person</Text>
-            <Text>But why would you do that when you could make one sap pay for it all!?</Text>
+            <HeaderText>Players List</HeaderText>
+            <ParagraphText>If you were to split the bill, it would be {splitBillAmount} per person!</ParagraphText>
+            <ParagraphText>But why would you do that when you could make one sap pay for it all!?</ParagraphText>
             <FlatList
                 data={playerNames}
                 renderItem={({item, index}) => (
@@ -41,7 +49,7 @@ const PlayersList = ({navigation}) => {
                 onChangeText={playerName => setPlayerName(playerName)} 
             />
             <Button title="Add Player" onPress={playerName => addPlayerToList(playerName)}/>
-            <Button title="Play" onPress={() => navigation.push("Roulette")}/>
+            <Button title="Play" onPress={() => handlePlayButtonClick()}/>
         </PlayersListScreenContainer>
     );
 };

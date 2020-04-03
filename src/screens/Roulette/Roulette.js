@@ -17,7 +17,7 @@ const Roulette = ({navigation}) => {
             <Text>Roulette</Text>
             <Text>{winner} has won!</Text>
             <Button title="Play" onPress={determineWinner}/>
-            <Button title="Play Again" onPress={navigation.push("Home")}/>
+            <Button title="Play Again" onPress={navigation.navigate("Home")}/>
         </View>
     );
 };

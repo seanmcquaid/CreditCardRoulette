@@ -7,7 +7,7 @@ import Button from "../../components/Button/Button";
 const Home = ({navigation}) => (
     <HomeScreenContainer>
         <HeaderText>Credit Card Roulette</HeaderText>
-        <Button title="Play" onPress={() => navigation.push("Enter Check")}/>
+        <Button title="Play" onPress={() => navigation.navigate("Enter Check")}/>
     </HomeScreenContainer>
 );
 
