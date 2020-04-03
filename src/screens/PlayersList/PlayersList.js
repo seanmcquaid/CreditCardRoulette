@@ -25,7 +25,7 @@ const PlayersList = ({navigation}) => {
     };
 
     const handlePlayButtonClick = async () => {
-        await navigation.navigate("Roulette Page");
+        await navigation.navigate("Roulette");
     };
 
     return (

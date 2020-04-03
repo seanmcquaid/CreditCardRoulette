@@ -15,7 +15,7 @@ export default () => (
             <Screen name="Home" component={Home}/>
             <Screen name="Enter Check" component={EnterCheck}/>
             <Screen name="Players List" component={PlayersList}/>
-            <Screen name="Roulette Page" component={Roulette}/>
+            <Screen name="Roulette" component={Roulette}/>
         </Navigator>
     </NavigationContainer>
 );
