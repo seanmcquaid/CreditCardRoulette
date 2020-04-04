@@ -17,7 +17,7 @@ const ButtonContainer = styled(TouchableHighlight)`
     justify-content : center;
     border : 2px solid #000;
     align-items : center;
-    margin : 10px;
+    margin : 16px;
 `;
 
 const ButtonText = styled(Text)`

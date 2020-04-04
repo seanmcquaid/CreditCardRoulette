@@ -23,6 +23,7 @@ const PlayerContainer = styled(View)`
     justify-content : space-between;
     align-items : center;
     width : 200px;
+    margin : 10px;
 `;
 
 const PlayerName = styled(Text)`

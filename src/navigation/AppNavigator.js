@@ -12,10 +12,10 @@ const {Screen, Navigator} = Stack;
 export default () => (
     <NavigationContainer>
         <Navigator>
-            <Screen name="Home" component={Home}/>
-            <Screen name="Enter Check" component={EnterCheck}/>
-            <Screen name="Players List" component={PlayersList}/>
-            <Screen name="Roulette" component={Roulette}/>
+            <Screen name="Home" options={{headerShown: false}} component={Home}/>
+            <Screen name="Enter Check" options={{headerShown: false}} component={EnterCheck}/>
+            <Screen name="Players List" options={{headerShown: false}} component={PlayersList}/>
+            <Screen name="Roulette" options={{headerShown: false}} component={Roulette}/>
         </Navigator>
     </NavigationContainer>
 );

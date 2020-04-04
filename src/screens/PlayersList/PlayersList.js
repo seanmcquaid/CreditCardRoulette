@@ -30,7 +30,7 @@ const PlayersList = ({navigation}) => {
 
     return (
         <PlayersListScreenContainer>
-            <HeaderText>Players List</HeaderText>
+            <HeaderText style={{"marginTop" : 100}}>Players List</HeaderText>
             <ParagraphText>If you were to split the bill, it would be {splitBillAmount} per person!</ParagraphText>
             <ParagraphText>But why would you do that when you could make one sap pay for it all!?</ParagraphText>
             <FlatList
@@ -59,6 +59,9 @@ const PlayersListScreenContainer = styled(View)`
     justify-content : center;
     align-items : center;
     background-color : #00ae6b;
+`;
+
+const PlayersListContainer = styled(View)`
 `;
 
 export default PlayersList;
