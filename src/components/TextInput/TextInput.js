@@ -7,4 +7,5 @@ export default styled(TextInput)`
     padding : 10px;
     margin : 10px;
     width : 180px;
+    background-color : white;
 `;
