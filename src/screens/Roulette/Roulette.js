@@ -5,14 +5,20 @@ import { GlobalContext } from "../../store/store";
 import HeaderText from "../../components/HeaderText/HeaderText";
 import ParagraphText from "../../components/ParagraphText/ParagraphText";
 import Button from "../../components/Button/Button";
+import {playAgain} from "../../actions/actions";
 
 const Roulette = ({navigation}) => {
     const [state, dispatch] = useContext(GlobalContext);
     const [winner, setWinner] = useState("");
     const {playerNames} = state;
 
-    const determineWinner = () => {
+    const determineWinnerOnTapHandler = () => {
         setWinner(playerNames[Math.floor(Math.random() * playerNames.length)])
+    };
+
+    const playAgainOnTapHandler = async () => {
+        await dispatch(playAgain())
+        navigation.navigate("Home")
     };
 
     return (
@@ -21,8 +27,8 @@ const Roulette = ({navigation}) => {
             <ParagraphText>
                 {winner.length > 0 ? `${winner} has won!` : "Press to see who won!"}
             </ParagraphText>
-            <Button title="Play" onPress={determineWinner}/>
-            <Button title="Play Again" onPress={() => navigation.navigate("Home")}/>
+            <Button title="Play" onPress={determineWinnerOnTapHandler}/>
+            <Button title="Play Again" onPress={playAgainOnTapHandler}/>
         </RouletteScreenContainer>
     );
 };

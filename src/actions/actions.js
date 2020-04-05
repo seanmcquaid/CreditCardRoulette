@@ -18,3 +18,8 @@ export const deletePlayer = selectedPlayerName => ({
         selectedPlayerName
     }
 });
+
+export const playAgain = () => ({
+    type : "PLAY_AGAIN",
+    payload : {}
+});

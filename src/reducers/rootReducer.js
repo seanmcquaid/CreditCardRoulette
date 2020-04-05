@@ -25,6 +25,12 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 playerNames : state.playerNames,
             }
+        case "PLAY_AGAIN": 
+            return {
+                ...state,
+                playerNames : initialState.playerNames,
+                checkAmount : initialState.checkAmount
+            }
         default :
             return state;
     }

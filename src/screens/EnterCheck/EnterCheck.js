@@ -11,7 +11,7 @@ const EnterCheck = ({navigation}) => {
     const [state, dispatch] = useContext(GlobalContext);
     const [inputText, setInputText] = useState("");
     
-    const handlePlayButtonTap = async () => {
+    const handlePlayButtonOnTapHandler = async () => {
         await dispatch(setCheckAmount(inputText));
         await navigation.navigate("Players List");
     };
@@ -24,7 +24,7 @@ const EnterCheck = ({navigation}) => {
                 value={inputText} 
                 onChangeText={text => setInputText(text)}
             />
-            <Button title="Play" onPress={() => handlePlayButtonTap()}/>
+            <Button title="Play" onPress={() => handlePlayButtonOnTapHandler()}/>
         </EnterCheckScreenContainer>
     );
 };

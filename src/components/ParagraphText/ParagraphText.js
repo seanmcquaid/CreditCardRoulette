@@ -4,6 +4,6 @@ import styled from "styled-components/native";
 
 export default styled(Text)`
     font-family : Merriweather-Regular;
-    font-size : 12px;
+    font-size : 16px;
     margin : 6px;
 `;
