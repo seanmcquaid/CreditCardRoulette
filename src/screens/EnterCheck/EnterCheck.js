@@ -1,6 +1,6 @@
 import React, {useState, useContext} from "react";
 import {GlobalContext} from "../../store/store";
-import {View} from "react-native";
+import {View, Alert} from "react-native";
 import {setCheckAmount} from "../../actions/actions";
 import styled from "styled-components/native";
 import HeaderText from "../../components/HeaderText/HeaderText";
@@ -12,8 +12,13 @@ const EnterCheck = ({navigation}) => {
     const [inputText, setInputText] = useState("");
     
     const handlePlayButtonOnTapHandler = async () => {
-        await dispatch(setCheckAmount(inputText));
-        await navigation.navigate("Players List");
+        const numberCheckRegex = new RegExp(/^[0-9]+$/);
+        if(numberCheckRegex.test(inputText)){
+            await dispatch(setCheckAmount(inputText));
+            await navigation.navigate("Players List");
+        }else{
+            Alert.alert("Please enter only numbers!")
+        }
     };
 
     return (

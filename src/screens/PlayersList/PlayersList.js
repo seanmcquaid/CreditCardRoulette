@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import {GlobalContext} from "../../store/store";
-import {View, FlatList} from "react-native";
+import {View, FlatList, Alert} from "react-native";
 import {addPlayer, deletePlayer} from "../../actions/actions";
 import Player from "../../components/Player/Player";
 import HeaderText from "../../components/HeaderText/HeaderText";
@@ -16,8 +16,12 @@ const PlayersList = ({navigation}) => {
     const splitBillAmount = checkAmount / (playerNames.length === 0 ? 1 : playerNames.length);
 
     const addPlayerToList = async () => {
-        await dispatch(addPlayer(playerName));
-        setPlayerName("");
+        if(playerName.length === 0){
+            Alert.alert("Please enter more than one character for the player's name!");
+        }else{
+            await dispatch(addPlayer(playerName));
+            setPlayerName("");
+        }
     };
 
     const removePlayerFromList = async selectedPlayerName => {

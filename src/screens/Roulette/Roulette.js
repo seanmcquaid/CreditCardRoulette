@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState, useEffect} from "react";
 import {View} from "react-native";
 import styled from "styled-components/native";
 import { GlobalContext } from "../../store/store";
@@ -10,22 +10,31 @@ import {playAgain} from "../../actions/actions";
 const Roulette = ({navigation}) => {
     const [state, dispatch] = useContext(GlobalContext);
     const [winner, setWinner] = useState("");
+    const [isLoadingWinner, setIsLoadingWinner] = useState(false);
     const {playerNames} = state;
 
+    useEffect(() => {
+        const timer = setTimeout(() => setIsLoadingWinner(false), 3000);
+        return () => clearTimeout(timer);
+    },[]);
+
     const determineWinnerOnTapHandler = () => {
-        setWinner(playerNames[Math.floor(Math.random() * playerNames.length)])
+        const winner = playerNames[Math.floor(Math.random() * playerNames.length)];
+        setIsLoadingWinner(true);
+        setWinner(winner);
     };
 
     const playAgainOnTapHandler = async () => {
-        await dispatch(playAgain())
-        navigation.navigate("Home")
+        await dispatch(playAgain());
+        navigation.navigate("Home");
     };
 
     return (
         <RouletteScreenContainer>
             <HeaderText>Roulette</HeaderText>
             <ParagraphText>
-                {winner.length > 0 ? `${winner} has won!` : "Press to see who won!"}
+                {winner.length === 0 ? "Press to see who won!" : 
+                isLoadingWinner ? "Waiting to see who won!!!" : `${winner} has won!`} 
             </ParagraphText>
             <Button title="Play" onPress={determineWinnerOnTapHandler}/>
             <Button title="Play Again" onPress={playAgainOnTapHandler}/>

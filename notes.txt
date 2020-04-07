@@ -1,6 +1,0 @@
-Improvements to Make
-
-1) Unit tests
-2) Add validation for only numbers on enter check page
-3) Add validation that you must add in more than 0 characters on player add page
-4) Add timer for seeing who the winner is
