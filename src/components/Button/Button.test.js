@@ -7,7 +7,7 @@ describe("<Button/>", () => {
         const onPress = jest.fn();
 
         const props = {
-            onPress : onPress,
+            onPress,
             title : "Mock Button"
         };
         
@@ -20,7 +20,7 @@ describe("<Button/>", () => {
         const onPress = jest.fn();
 
         const props = {
-            onPress : onPress,
+            onPress,
             title : "Mock Button"
         };
 

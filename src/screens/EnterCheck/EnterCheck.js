@@ -5,7 +5,7 @@ import {setCheckAmount} from "../../actions/actions";
 import styled from "styled-components/native";
 import HeaderText from "../../components/HeaderText/HeaderText";
 import Button from "../../components/Button/Button";
-import TextInput from "../../components/TextInput/TextInput";
+import Input from "../../components/Input/Input";
 
 const EnterCheck = ({navigation}) => {
     const [state, dispatch] = useContext(GlobalContext);
@@ -24,7 +24,7 @@ const EnterCheck = ({navigation}) => {
     return (
         <EnterCheckScreenContainer>
             <HeaderText>Enter Check</HeaderText>
-            <TextInput 
+            <Input 
                 placeholder="Enter Amount Here" 
                 value={inputText} 
                 onChangeText={text => setInputText(text)}
