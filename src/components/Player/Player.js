@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, TouchableWithoutFeedback, View } from "react-native";
+import { Text, TouchableWithoutFeedback, View, Alert } from "react-native";
 import PropTypes from "prop-types";
 import styled from "styled-components/native";
 import {FontAwesome} from "@expo/vector-icons";
@@ -39,6 +39,11 @@ const IconContainer = styled(View)`
 Player.propTypes = {
     playerName : PropTypes.string.isRequired,
     removePlayer : PropTypes.func.isRequired,
+};
+
+Player.defaultProps = {
+    playerName : "Player Name Prop Here",
+    removePlayer : () => Alert.alert("Add remove player prop!")
 };
 
 export default Player;

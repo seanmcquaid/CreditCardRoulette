@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextInput/> Snapshot matches correctly 1`] = `
+<TextInput
+  allowFontScaling={true}
+  rejectResponderTermination={true}
+  style={
+    Array [
+      Object {
+        "backgroundColor": "white",
+        "borderColor": "black",
+        "borderStyle": "solid",
+        "borderWidth": 2,
+        "marginBottom": 10,
+        "marginLeft": 10,
+        "marginRight": 10,
+        "marginTop": 10,
+        "paddingBottom": 10,
+        "paddingLeft": 10,
+        "paddingRight": 10,
+        "paddingTop": 10,
+        "width": 180,
+      },
+    ]
+  }
+  underlineColorAndroid="transparent"
+/>
+`;

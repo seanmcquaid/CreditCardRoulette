@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ParagraphText/> Matches snapshot correctly 1`] = `
+<Text
+  style={
+    Array [
+      Object {
+        "fontFamily": "Merriweather-Regular",
+        "fontSize": 16,
+        "marginBottom": 6,
+        "marginLeft": 6,
+        "marginRight": 6,
+        "marginTop": 6,
+      },
+    ]
+  }
+>
+  Paragraph Text
+</Text>
+`;
