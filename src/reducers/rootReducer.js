@@ -3,9 +3,9 @@ const initialState = {
     playerNames : []
 };
 
-const rootReducer = (state = initialState, action) => {
+export default (state = initialState, action) => {
     switch(action.type){
-        case "SET_CHECK_AMOUNT" : 
+        case "SET_CHECK_AMOUNT": 
             return {
                 ...state,
                 checkAmount : action.payload.checkAmount
@@ -20,11 +20,6 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 playerNames : state.playerNames.filter(playerName => playerName !== action.payload.selectedPlayerName)
             };
-        case "GET_PLAYERS":
-            return {
-                ...state,
-                playerNames : state.playerNames,
-            }
         case "PLAY_AGAIN": 
             return {
                 ...state,
@@ -35,5 +30,3 @@ const rootReducer = (state = initialState, action) => {
             return state;
     }
 };
-
-export default rootReducer;

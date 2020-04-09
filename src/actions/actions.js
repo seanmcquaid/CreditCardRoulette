@@ -9,14 +9,14 @@ export const addPlayer = playerName => ({
     type : "ADD_PLAYER",
     payload : {
         playerName
-    }
+    },
 });
 
 export const deletePlayer = selectedPlayerName => ({
     type : "DELETE_PLAYER",
     payload : {
         selectedPlayerName
-    }
+    },
 });
 
 export const playAgain = () => ({

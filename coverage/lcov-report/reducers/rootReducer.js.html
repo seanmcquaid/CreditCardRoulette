@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Input/Input.js</title>
+    <title>Code coverage report for reducers/rootReducer.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -18,34 +18,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">Input</a> Input.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">reducers</a> rootReducer.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>8/8</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">83.33% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>5/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -87,30 +87,13 @@
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
-<a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a>
-<a name='L34'></a><a href='#L34'>34</a>
-<a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a>
-<a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -122,6 +105,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -131,59 +117,46 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
-import styled from "styled-components/native";
-import { TextInput, Alert, View } from "react-native";
-import PropTypes from "prop-types";
-&nbsp;
-const Input = ({onChange, placeholder, value}) =&gt; (
-    &lt;InputContainer&gt;
-        &lt;InputText 
-            testID={`${placeholder}-textInput`}
-            onChange={onChange} 
-            placeholder={placeholder} 
-            value={value}
-        /&gt;
-    &lt;/InputContainer&gt;
-);
-&nbsp;
-const InputContainer = styled(View)`
-    margin : 10px;
-`;
-&nbsp;
-&nbsp;
-const InputText = styled(TextInput)`
-    border : 2px solid black;
-    padding : 10px;
-    width : 180px;
-    background-color : white;
-`;
-&nbsp;
-Input.propTypes = {
-    onChange : PropTypes.func.isRequired,
-    placeholder : PropTypes.string.isRequired,
-    value : PropTypes.string.isRequired,
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const initialState = {
+    checkAmount : 0,
+    playerNames : []
 };
 &nbsp;
-Input.defaultProps = {
-    onChange : <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >Alert.alert("Add an onChange prop!"),</span>
-    placeholder : "Placeholder prop here",
-    value : "Add value prop"
-};
-&nbsp;
-export default Input;</pre></td></tr></table></pre>
+export default (state = <span class="branch-0 cbranch-no" title="branch not covered" >initialState,</span> action) =&gt; {
+    switch(action.type){
+        case "SET_CHECK_AMOUNT": 
+            return {
+                ...state,
+                checkAmount : action.payload.checkAmount
+            }
+        case "ADD_PLAYER":
+            return {
+                ...state,
+                playerNames : [...state.playerNames, action.payload.playerName]
+            };
+        case "DELETE_PLAYER":
+            return {
+                ...state,
+                playerNames : state.playerNames.filter(playerName =&gt; playerName !== action.payload.selectedPlayerName)
+            };
+        case "PLAY_AGAIN": 
+            return {
+                ...state,
+                playerNames : initialState.playerNames,
+                checkAmount : initialState.checkAmount
+            }
+        default :
+            return state;
+    }
+};</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Apr 08 2020 22:42:23 GMT-0400 (Eastern Daylight Time)
+                at Wed Apr 08 2020 22:59:39 GMT-0400 (Eastern Daylight Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
