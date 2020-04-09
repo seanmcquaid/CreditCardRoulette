@@ -1,15 +1,27 @@
 import React from "react";
 import styled from "styled-components/native";
-import { TextInput, Alert } from "react-native";
+import { TextInput, Alert, View } from "react-native";
 import PropTypes from "prop-types";
 
-const Input = ({onChange, placeholder, value}) => <StyledTextInput testID="textInput" onChange={onChange} placeholder={placeholder} value={value}/>
+const Input = ({onChange, placeholder, value}) => (
+    <InputContainer>
+        <InputText 
+            testID={`${placeholder}-textInput`}
+            onChange={onChange} 
+            placeholder={placeholder} 
+            value={value}
+        />
+    </InputContainer>
+);
+
+const InputContainer = styled(View)`
+    margin : 10px;
+`;
 
 
-const StyledTextInput = styled(TextInput)`
+const InputText = styled(TextInput)`
     border : 2px solid black;
     padding : 10px;
-    margin : 10px;
     width : 180px;
     background-color : white;
 `;
@@ -26,4 +38,4 @@ Input.defaultProps = {
     value : "Add value prop"
 };
 
-export default TextInput;
+export default Input;

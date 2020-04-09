@@ -4,7 +4,7 @@ import {View, FlatList, Alert} from "react-native";
 import {addPlayer, deletePlayer} from "../../actions/actions";
 import Player from "../../components/Player/Player";
 import HeaderText from "../../components/HeaderText/HeaderText";
-import TextInput from "../../components/TextInput/TextInput";
+import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
 import ParagraphText from "../../components/ParagraphText/ParagraphText";
 import styled from "styled-components/native";
@@ -47,7 +47,7 @@ const PlayersList = ({navigation}) => {
                 )}
                 keyExtractor={(item, index) => index.toString()}
             />
-            <TextInput
+            <Input
                 placeholder="Enter Player Here" 
                 value={playerName} 
                 onChangeText={playerName => setPlayerName(playerName)} 

@@ -21,5 +21,4 @@ export const deletePlayer = selectedPlayerName => ({
 
 export const playAgain = () => ({
     type : "PLAY_AGAIN",
-    payload : {}
 });

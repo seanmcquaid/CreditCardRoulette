@@ -8,7 +8,7 @@ const Player = ({playerName, removePlayer}) => {
     return (
         <PlayerContainer>
             <PlayerName>{playerName}</PlayerName>
-            <TouchableWithoutFeedback onPress={() => removePlayer(playerName)}>
+            <TouchableWithoutFeedback testId={playerName} onPress={() => removePlayer(playerName)}>
                 <IconContainer>
                         <FontAwesome name="trash-o" size={20} color="#B22222"/>
                 </IconContainer>
