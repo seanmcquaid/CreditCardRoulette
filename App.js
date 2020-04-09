@@ -4,7 +4,6 @@ import AppNavigator from "./src/navigation/AppNavigator";
 import {GlobalContextProvider} from "./src/store/store";
 import * as Font from "expo-font";
 
-
 const App = () => { 
     const [isFontLoaded, setIsFontLoaded] = useState(false);
 
@@ -22,16 +21,11 @@ const App = () => {
         }
     }, [])
     
-    if(!isFontLoaded){
-        return(
-            <ActivityIndicator/>
-        );
-    }else {
-        return (
-            <GlobalContextProvider>
-                <AppNavigator/>
-            </GlobalContextProvider>
-        );
+    {isFontLoaded ? 
+        <ActivityIndicator/> : 
+        <GlobalContextProvider>
+            <AppNavigator/>
+        </GlobalContextProvider>
     }
 };
 
