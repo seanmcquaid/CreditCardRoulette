@@ -67,4 +67,20 @@ describe("<EnterCheck/>", () => {
 
         expect(navigate).toHaveBeenCalledTimes(0);
     });
+    it("Matches snapshot correctly", () => {
+        const navigate = jest.fn();
+        
+        const props = {
+            navigation : {
+                navigate
+            }
+        };
+        
+        const enterCheck = render(
+        <GlobalContextProvider>
+            <EnterCheck {...props}/>
+        </GlobalContextProvider>);
+
+        expect(enterCheck).toMatchSnapshot();
+    });
 });

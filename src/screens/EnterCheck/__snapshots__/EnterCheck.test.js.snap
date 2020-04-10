@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<EnterCheck/> Matches snapshot correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#00ae6b",
+        "flexBasis": 0,
+        "flexGrow": 1,
+        "flexShrink": 1,
+        "justifyContent": "center",
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontFamily": "Fira-Sans",
+          "fontSize": 26,
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    Enter Check
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "marginBottom": 10,
+          "marginLeft": 10,
+          "marginRight": 10,
+          "marginTop": 10,
+        },
+      ]
+    }
+  >
+    <TextInput
+      allowFontScaling={true}
+      onChange={[Function]}
+      placeholder="Enter Amount Here"
+      rejectResponderTermination={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "white",
+            "borderColor": "black",
+            "borderStyle": "solid",
+            "borderWidth": 2,
+            "paddingBottom": 10,
+            "paddingLeft": 10,
+            "paddingRight": 10,
+            "paddingTop": 10,
+            "width": 180,
+          },
+        ]
+      }
+      underlineColorAndroid="transparent"
+      value=""
+    />
+  </View>
+  <View
+    accessible={true}
+    focusable={true}
+    isTVSelectable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#C5B358",
+          "borderColor": "#000",
+          "borderRadius": 3,
+          "borderStyle": "solid",
+          "borderWidth": 2,
+          "justifyContent": "center",
+          "marginBottom": 16,
+          "marginLeft": 16,
+          "marginRight": 16,
+          "marginTop": 16,
+          "paddingBottom": 16,
+          "paddingLeft": 30,
+          "paddingRight": 30,
+          "paddingTop": 16,
+        },
+      ]
+    }
+    testID="button"
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "fontFamily": "Merriweather-Regular",
+            "fontSize": 16,
+          },
+          null,
+        ]
+      }
+      testID="buttonTitle"
+    >
+      Play
+    </Text>
+  </View>
+</View>
+`;

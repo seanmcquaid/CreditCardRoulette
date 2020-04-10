@@ -11,7 +11,7 @@ const Home = ({navigation}) => (
             <SecondTitleWord>Card </SecondTitleWord>
             <ThirdTitleWord>Roulette</ThirdTitleWord>
         </HeaderText>
-        <Button title="Play" onPress={() => navigation.navigate("Enter Check")}/>
+        <Button testID="playButton" title="Play" onPress={() => navigation.navigate("Enter Check")}/>
     </HomeScreenContainer>
 );
 
