@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 const Input = ({onChange, placeholder, value}) => (
     <InputContainer>
         <InputText 
-            testID={`${placeholder}-textInput`}
             onChange={onChange} 
             placeholder={placeholder} 
             value={value}

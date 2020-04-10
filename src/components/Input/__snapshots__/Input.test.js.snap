@@ -33,7 +33,6 @@ exports[`<Input/> Snapshot matches correctly 1`] = `
         },
       ]
     }
-    testID="Placeholder-textInput"
     underlineColorAndroid="transparent"
     value="Value"
   />

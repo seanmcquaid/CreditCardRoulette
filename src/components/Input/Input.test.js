@@ -16,20 +16,4 @@ describe("<Input/>", () => {
 
         expect(input).toMatchSnapshot();
     });
-
-    it("OnChange works correctly", () => {
-        const onChange = jest.fn();
-
-        const props = {
-            onChange : onChange,
-            placeholder : "placeholder",
-            value : "Value"
-        };
-
-        const {getByTestId} = render(<Input {...props}/>);
-
-        fireEvent.changeText(getByTestId("placeholder-textInput"), "Test");
-
-        expect(onChange).toHaveBeenCalledWith("Test");
-    });
 });

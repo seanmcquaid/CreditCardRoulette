@@ -24,12 +24,13 @@ const EnterCheck = ({navigation}) => {
     return (
         <EnterCheckScreenContainer>
             <HeaderText>Enter Check</HeaderText>
-            <Input 
+            <Input  
+                testID="textInput"
                 placeholder="Enter Amount Here" 
                 value={inputText} 
                 onChangeText={text => setInputText(text)}
             />
-            <Button title="Play" onPress={() => handlePlayButtonOnTapHandler()}/>
+            <Button testID="playButton" title="Play" onPress={() => handlePlayButtonOnTapHandler()}/>
         </EnterCheckScreenContainer>
     );
 };
