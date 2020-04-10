@@ -20,7 +20,7 @@ describe("<Home/>", () => {
         
         await fireEvent.press(getByTestId("playButton"));
 
-        expect(navigate).toHaveBeenCalled(1);
+        expect(navigate).toHaveBeenCalledTimes(1);
         expect(navigate).toHaveBeenCalledWith("Enter Check");
     });
     it("Matches snapshot correctly", () => {
