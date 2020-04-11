@@ -6,9 +6,9 @@ import {FontAwesome} from "@expo/vector-icons";
 
 const Player = ({playerName, removePlayer}) => {
     return (
-        <PlayerContainer>
+        <PlayerContainer testId={`${playerName}Container`}>
             <PlayerName>{playerName}</PlayerName>
-            <TouchableWithoutFeedback testId={playerName} onPress={() => removePlayer(playerName)}>
+            <TouchableWithoutFeedback testId={`remove${playerName}`} onPress={() => removePlayer(playerName)}>
                 <IconContainer>
                         <FontAwesome name="trash-o" size={20} color="#B22222"/>
                 </IconContainer>

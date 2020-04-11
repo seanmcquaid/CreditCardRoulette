@@ -28,7 +28,7 @@ const PlayersList = ({navigation}) => {
         await dispatch(deletePlayer(selectedPlayerName));
     };
 
-    const handlePlayButtonClick = async () => {
+    const handlePlayButtonTap = async () => {
         await navigation.navigate("Roulette");
     };
 
@@ -42,18 +42,19 @@ const PlayersList = ({navigation}) => {
                 renderItem={({item, index}) => (
                     <Player 
                         playerName={item} 
-                        removePlayer={removePlayerFromList} 
+                        removePlayer={removePlayerFromList}
                     />
                 )}
                 keyExtractor={(item, index) => index.toString()}
             />
             <Input
+                testID="playerNameInput"
                 placeholder="Enter Player Here" 
                 value={playerName} 
                 onChangeText={playerName => setPlayerName(playerName)} 
             />
-            <Button title="Add Player" onPress={playerName => addPlayerToList(playerName)}/>
-            <Button title="Play" onPress={() => handlePlayButtonClick()}/>
+            <Button testID="addPlayerButton" title="Add Player" onPress={playerName => addPlayerToList(playerName)}/>
+            <Button testId="playButton" title="Play" onPress={() => handlePlayButtonTap()}/>
         </PlayersListScreenContainer>
     );
 };
