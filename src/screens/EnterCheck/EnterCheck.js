@@ -11,7 +11,7 @@ const EnterCheck = ({navigation}) => {
     const [state, dispatch] = useContext(GlobalContext);
     const [inputText, setInputText] = useState("");
     
-    const handlePlayButtonOnTapHandler = async () => {
+    const handlePlayButtonOnPressHandler = async () => {
         const numberCheckRegex = new RegExp(/^[0-9]+$/);
         if(numberCheckRegex.test(inputText)){
             await dispatch(setCheckAmount(inputText));
@@ -30,7 +30,7 @@ const EnterCheck = ({navigation}) => {
                 value={inputText} 
                 onChangeText={text => setInputText(text)}
             />
-            <Button testID="playButton" title="Play" onPress={() => handlePlayButtonOnTapHandler()}/>
+            <Button testID="playButton" title="Play" onPress={() => handlePlayButtonOnPressHandler()}/>
         </EnterCheckScreenContainer>
     );
 };

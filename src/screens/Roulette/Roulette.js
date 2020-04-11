@@ -18,13 +18,13 @@ const Roulette = ({navigation}) => {
         return () => clearTimeout(timer);
     },[]);
 
-    const determineWinnerOnTapHandler = () => {
+    const determineWinnerOnPressHandler = () => {
         const winner = playerNames[Math.floor(Math.random() * playerNames.length)];
         setIsLoadingWinner(true);
         setWinner(winner);
     };
 
-    const playAgainOnTapHandler = async () => {
+    const playAgainOnPressHandler = async () => {
         await dispatch(playAgain());
         navigation.navigate("Home");
     };
@@ -36,8 +36,8 @@ const Roulette = ({navigation}) => {
                 {winner.length === 0 ? "Press to see who won!" : 
                 isLoadingWinner ? "Waiting to see who won!!!" : `${winner} has won!`} 
             </ParagraphText>
-            <Button title="Play" onPress={determineWinnerOnTapHandler}/>
-            <Button title="Play Again" onPress={playAgainOnTapHandler}/>
+            <Button title="Play" onPress={determineWinnerOnPressHandler}/>
+            <Button title="Play Again" onPress={playAgainOnPressHandler}/>
         </RouletteScreenContainer>
     );
 };

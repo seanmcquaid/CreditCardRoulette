@@ -15,7 +15,7 @@ const PlayersList = ({navigation}) => {
     const {playerNames, checkAmount} = state;
     const splitBillAmount = checkAmount / (playerNames.length === 0 ? 1 : playerNames.length);
 
-    const addPlayerToList = async () => {
+    const addPlayerToListOnPressHandler = async () => {
         if(playerName.length === 0){
             Alert.alert("Please enter more than one character for the player's name!");
         }else{
@@ -24,11 +24,11 @@ const PlayersList = ({navigation}) => {
         }
     };
 
-    const removePlayerFromList = async selectedPlayerName => {
+    const removePlayerFromListOnPressHandler = async selectedPlayerName => {
         await dispatch(deletePlayer(selectedPlayerName));
     };
 
-    const handlePlayButtonTap = async () => {
+    const handlePlayButtonOnPressHandler = async () => {
         await navigation.navigate("Roulette");
     };
 
@@ -42,7 +42,7 @@ const PlayersList = ({navigation}) => {
                 renderItem={({item, index}) => (
                     <Player 
                         playerName={item} 
-                        removePlayer={removePlayerFromList}
+                        removePlayer={removePlayerFromListOnPressHandler}
                     />
                 )}
                 keyExtractor={(item, index) => index.toString()}
@@ -53,8 +53,8 @@ const PlayersList = ({navigation}) => {
                 value={playerName} 
                 onChangeText={playerName => setPlayerName(playerName)} 
             />
-            <Button testID="addPlayerButton" title="Add Player" onPress={playerName => addPlayerToList(playerName)}/>
-            <Button testId="playButton" title="Play" onPress={() => handlePlayButtonTap()}/>
+            <Button testID="addPlayerButton" title="Add Player" onPress={playerName => addPlayerToListOnPressHandler(playerName)}/>
+            <Button testId="playButton" title="Play" onPress={() => handlePlayButtonOnPressHandler()}/>
         </PlayersListScreenContainer>
     );
 };
