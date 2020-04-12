@@ -32,12 +32,12 @@ const Roulette = ({navigation}) => {
     return (
         <RouletteScreenContainer>
             <HeaderText>Roulette</HeaderText>
-            <ParagraphText>
+            <ParagraphText testID="gameResultText">
                 {winner.length === 0 ? "Press to see who won!" : 
                 isLoadingWinner ? "Waiting to see who won!!!" : `${winner} has won!`} 
             </ParagraphText>
-            <Button title="Play" onPress={determineWinnerOnPressHandler}/>
-            <Button title="Play Again" onPress={playAgainOnPressHandler}/>
+            <Button testID="" title="Play" onPress={determineWinnerOnPressHandler}/>
+            <Button testID="" title="Play Again" onPress={playAgainOnPressHandler}/>
         </RouletteScreenContainer>
     );
 };
