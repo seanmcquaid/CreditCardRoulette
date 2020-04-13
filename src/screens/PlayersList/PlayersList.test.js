@@ -41,7 +41,7 @@ describe("<PlayersList/>", () => {
         expect(getByTestId("SeanContainer")).toBeDefined();
     });
 
-    it("AddPlayerToList won't add a string with 0 characters", () => {
+    it("AddPlayerToList won't add a string with 0 characters", async () => {
         const navigate = jest.fn();
         
         const props = {

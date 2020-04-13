@@ -16,5 +16,4 @@ export const GlobalContextProvider = props => {
             {props.children}
         </GlobalContext.Provider>
     )
-
 };
