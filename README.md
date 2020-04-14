@@ -1,6 +1,6 @@
-# Credit Roulette
+# Credit Card Roulette
 
-This was meant to serve as a formal introduction to React Native. I have gone through various tutorials and read a fair amount of documentation but have never really sat down on my own to conceptualize an application. I learned a lot and was happy to have spent the time digging into this further!
+This application is kind of based on an inside joke with some friends. You are able to enter a check total, enter however many players and then hit a button to find out who pays the bill for your table!
 
 ## Things Learned
 
