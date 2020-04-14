@@ -84,7 +84,7 @@ describe("<Roulette/>", () => {
 
     });
 
-    it("Loading paragraph text displays within the timer", () => {
+    it("Loading paragraph text displays within the timer", async () => {
         const navigate = jest.fn();
         
         const props = {
@@ -108,7 +108,7 @@ describe("<Roulette/>", () => {
         expect(getByTestId("gameResultText").props.children).toEqual("Waiting to see who won!!!");
     });
 
-    it("Winner displays after play button is pressed and timer runs out", () => {
+    it("Winner displays after play button is pressed and timer runs out", async () => {
         const navigate = jest.fn();
         
         const props = {
